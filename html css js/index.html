@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Saklar Lampu Otomatis</title>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.css" rel="stylesheet" />
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to bottom, #1e3c72, #2a5298);
+        color: white;
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    h1 {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    button {
+        background: red;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        margin: 5px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+</style>
+<body>
+    <h1 class="text-3xl font-bold mb-6">Saklar Lampu Otomatis</h1>
+    <h2 class="text-xl font-semibold mb-4">Ruang Keluarga
+        <!-- lampu 1 -->
+        <div class="flex flex-col gap-2 items-center">
+            <img src="assets/images/off.png" alt="" id="lampu1" />
+            <label class="inline-flex items-center cursor-pointer">
+                <input type="checkbox" id="default-toggle1" class="sr-only peer" onchange="saklar(this)">
+                <div class="relative w-9 h-5 ... peer-checked:bg-brand"></div>
+            </label>
+        </div>
+        <!-- lampu 2 -->
+        <div class="flex flex-col gap-2 items-center">
+            <img src="assets/images/off.png" alt="" id="lampu2" />
+            <label class="inline-flex items-center cursor-pointer">
+                <input type="checkbox" id="default-toggle2" class="sr-only peer" onchange="saklar(this)">
+                <div class="relative w-9 h-5 ... peer-checked:bg-brand"></div>
+            </label>
+        </div>
+        <!-- lampu 3 -->
+        <div class="flex flex-col gap-2 items-center">
+            <img src="assets/images/off.png" alt="" id="lampu3" />
+            <label class="inline-flex items-center cursor-pointer">
+                <input type="checkbox" id="default-toggle3" class="sr-only peer" onchange="saklar(this)">
+                <div class="relative w-9 h-5 ... peer-checked:bg-brand"></div>
+            </label>
+        </div>
+        <!-- lampu 4 (makan) -->
+        <h2 class="text-xl font-semibold mb-4">Ruang makan
+            <div class="flex flex-col gap-2 items-center">
+                <img src="assets/images/off.png" alt="" id="lampu4" />
+                <label class="inline-flex items-center cursor-pointer">
+                    <input type="checkbox" id="default-toggle4" class="sr-only peer" onchange="saklar(this)">
+                    <div class="relative w-9 h-5 ... peer-checked:bg-brand"></div>
+                </label>
+            </div>
+            <!-- lampu 5 -->
+            <h2 class="text-xl font-semibold mb-4">Ruang tidur
+                <div class="flex flex-col gap-2 items-center">
+                    <img src="assets/images/off.png" alt="" id="lampu5" />
+                    <label class="inline-flex items-center cursor-pointer">
+                        <input type="checkbox" id="default-toggle5" class="sr-only peer" onchange="saklar(this)">
+                        <div class="relative w-9 h-5 ... peer-checked:bg-brand"></div>
+                    </label>
+                </div>
+                <!-- lampu 6 -->
+                <div class="flex flex-col gap-2 items-center">
+                    <img src="assets/images/off.png" alt="" id="lampu6" />
+                    <label class="inline-flex items-center cursor-pointer">
+                        <input type="checkbox" id="default-toggle6" class="sr-only peer" onchange="saklar(this)">
+                        <div class="relative w-9 h-5 ... peer-checked:bg-brand"></div>
+                    </label>
+                </div>
+                <!-- lampu 7 -->
+                <h2 class="text-xl font-semibold mb-4">Ruang tamu
+                    <div class="flex flex-col gap-2 items-center">
+                        <img src="assets/images/off.png" alt="" id="lampu7" />
+                        <label class="inline-flex items-center cursor-pointer">
+                            <input type="checkbox" id="default-toggle7" class="sr-only peer" onchange="saklar(this)">
+                            <div class="relative w-9 h-5 ... peer-checked:bg-brand"></div>
+                        </label>
+                    </div>
+                    <!-- lampu 8 -->
+                    <div class="flex flex-col gap-2 items-center">
+                        <img src="assets/images/off.png" alt="" id="lampu8" />
+                        <label class="inline-flex items-center cursor-pointer">
+                            <input type="checkbox" id="default-toggle8" class="sr-only peer" onchange="saklar(this)">
+                            <div class="relative w-9 h-5 ... peer-checked:bg-brand"></div>
+                        </label>
+                    </div>
+                    <!-- lampu 9 -->
+                    <div class="flex flex-col gap-2 items-center">
+                        <img src="assets/images/off.png" alt="" id="lampu9" />
+                        <label class="inline-flex items-center cursor-pointer">
+                            <input type="checkbox" id="default-toggle9" class="sr-only peer" onchange="saklar(this)">
+                            <div class="relative w-9 h-5 ... peer-checked:bg-brand"></div>
+                        </label>
+                    </div>
+                    <!-- lampu 10 -->
+                    <div class="flex flex-col gap-2 items-center">
+                        <img src="assets/images/off.png" alt="" id="lampu10" />
+                        <label class="inline-flex items-center cursor-pointer">
+                            <input type="checkbox" id="default-toggle10" class="sr-only peer" onchange="saklar(this)">
+                            <div class="relative w-9 h-5 ... peer-checked:bg-brand"></div>
+                        </label>
+                    </div>
+                    </div>
+                    <!-- Group controls -->
+                    <div class="flex justify-center gap-3 mt-6">
+                        <button class="px-3 py-2 bg-sky-600 text-white rounded"
+                            onclick="groupToggle('keluarga')">Keluarga (1-3)</button>
+                        <button class="px-3 py-2 bg-emerald-600 text-white rounded" onclick="groupToggle('makan')">Makan
+                            (4)</button>
+                        <button class="px-3 py-2 bg-violet-600 text-white rounded" onclick="groupToggle('tidur')">Tidur
+                            (5-6)</button>
+                        <button class="px-3 py-2 bg-orange-600 text-white rounded" onclick="groupToggle('tamu')">Tamu
+                            (7-10)</button>
+                        <button class="px-3 py-2 bg-gray-700 text-white rounded"
+                            onclick="groupToggle('all')">All</button>
+                    </div>
+                    <!-- script js -->
+                    <script src="saklar.js" type="application/javascript"></script>
+</body>
+</html>
